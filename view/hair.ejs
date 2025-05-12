@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hairs</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <h1>Check out these Hairstyles!</h1>
+
+  <div class="card-container">
+    <% for(let i = 0; i < students.length; i++){ %>
+      <div class="card">
+        <img src="<%= students[i].image %>" alt="Profile Picture">
+        <h2><%= students[i].name %></h2>
+        <p>Grade: <%= students[i].grade %></p>
+
+        <div class="button-wrapper">
+            <!-- Task 5: Add a form to update the student's grade -->
+            <!-- Make sure the new grade is a number from 0 to 100 -->
+            <!-- Go to script.js to complete Task 6 -->
+          <form onsubmit="editStudent(event, '<%= students[i]._id %>')">
+            <input type="text" name="name" placeholder="Student's name">
+            <input type="text" name="image" placeholder="Student's picture">
+            <input type="number" name="grade" placeholder="0" min="0" max="100">
+            <button type="submit">Update</button>
+          </form>
+
+            <!-- Task 2: Add a button to delete the entire student by ID -->
+            <!-- Go to script.js to complete Task 3 -->
+          <button onclick="deleteStudent('<%= students[i]._id %>')">Delete</button>
+        </div>
+
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>
