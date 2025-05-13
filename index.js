@@ -32,6 +32,17 @@ app.get("/", async (req, res) => {
     res.render("hair.ejs", { hairs });
 });
 
+app.delete('/delete/hairstyle/:_id', async (req, res) => {
+    const response = await Hair.findOneAndDelete({_id: req.params._id})
+    res.json(response)
+})
+
+app.patch("/update/hairstyle/:_id", async (req, res) => {
+const update = await Hair.findOneAndUpdate({ _id: req.params._id }, 
+        req.body, {new: true})
+        res.json(update);
+})
+
 
 async function startServer() {
     await mongoose.connect("mongodb+srv://SE12AbiF:CSH2025@cluster0.ebb1f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
