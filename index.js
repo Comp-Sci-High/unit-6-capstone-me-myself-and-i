@@ -21,7 +21,7 @@ const hairSchema = new mongoose.Schema(
     {
         name: {type: String},
         image: {type: String},
-        price: {type: String}
+        price: {type: Number}
     }
 );
 
@@ -31,6 +31,15 @@ app.get("/", async (req, res) => {
     const hairs = await Hair.find({});
     res.render("hair.ejs", { hairs });
 });
+
+app.post("/add/hairstyle", async (req, res) => {
+    const newHairstyle = await new Hair({
+      name: req.body.name,
+      image: req.body.image,
+      price: req.body.price,
+    }).save();
+    res.json(newHairstyle);
+  });
 
 app.delete('/delete/hairstyle/:_id', async (req, res) => {
     const response = await Hair.findOneAndDelete({_id: req.params._id})
