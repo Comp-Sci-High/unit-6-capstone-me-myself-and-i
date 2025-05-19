@@ -21,7 +21,10 @@ const hairSchema = new mongoose.Schema(
     {
         name: {type: String},
         image: {type: String},
-        price: {type: Number}
+        price: {type: Number},
+        duration: {type: Number},
+        description: {type: String},
+        rating: {type: String}
     }
 );
 
@@ -37,6 +40,9 @@ app.post("/add/hairstyle", async (req, res) => {
       name: req.body.name,
       image: req.body.image,
       price: req.body.price,
+      duration: req.body.duration,
+      description: req.body.description,
+      rating: req.body.rating
     }).save();
     res.json(newHairstyle);
   });
