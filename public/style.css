@@ -1,1 +1,84 @@
-//...
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000;
+  color: #FFD700;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFD700;
+  margin-bottom: 0.5em;
+}
+
+/* Links */
+a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FFA500; /* gold-orange hover effect */
+}
+
+/* Buttons */
+button, .btn {
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #e6c200;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cards or Sections */
+.card {
+  background-color: #111111;
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+/* Inputs */
+input, textarea, select {
+  background-color: #1a1a1a;
+  color: #FFD700;
+  border: 1px solid #FFD700;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #FFA500;
+  box-shadow: 0 0 5px #FFA500;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #FFD700;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #FFD700;
+}
