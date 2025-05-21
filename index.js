@@ -24,7 +24,7 @@ const hairSchema = new mongoose.Schema(
         price: {type: Number},
         duration: {type: Number},
         description: {type: String},
-        rating: {type: String}
+        aveRating: {type: String}
     }
 );
 
