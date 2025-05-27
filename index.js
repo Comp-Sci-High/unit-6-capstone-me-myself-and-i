@@ -35,6 +35,11 @@ app.get("/", async (req, res) => {
     res.render("hair.ejs", { hairs });
 });
 
+app.get("/admin", async (req, res) => {
+    const hairs = await Hair.find({});
+    res.render("admin.ejs", { hairs });
+})
+
 app.post("/add/hairstyle", async (req, res) => {
     const newHairstyle = await new Hair({
       name: req.body.name,

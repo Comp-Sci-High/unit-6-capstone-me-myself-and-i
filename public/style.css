@@ -28,18 +28,11 @@ h1 {
   padding: 40px;
 }
 
-/* Hair card */
-.hairs-card {
-  background-color: #111111;
-  border: 1px solid #FFD700;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+.hairs-card form {
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 450px; /* Ensures all cards have the same height */
-  box-sizing: border-box;
+  gap: 10px;
 }
 
 /* Image styling */

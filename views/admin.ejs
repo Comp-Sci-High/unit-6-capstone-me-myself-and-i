@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hairs (Admin Commands)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>Admin control!</h1>
+</header>
+  
+<main class="card-container">
+    <% for (let i = 0; i < hairs.length; i++) { %>
+      <div class="hairs-card">
+        <h3><%= hairs[i].name %></h3>
+        <img src="<%= hairs[i].image %>" alt="<%= hairs[i].name %>">
+        <p>Pricing: <%= hairs[i].price %></p>
+        <p>Duration: <%= hairs[i].duration %> minute(s)</p>
+        <p>Description: <%= hairs[i].description %> </p>
+        <p>Average rating: <%= hairs[i].aveRating %> </p>
+
+        <!-- Buttons here! -->
+        <form onsubmit="editHair(event, '<%= hairs[i]._id %>')">
+            <input type="text" name="name" placeholder="Hairstyle name">
+            <input type="text" name="image" placeholder="Reference">
+            <input type="number" name="duration" placeholder="duration" min="0" max="100">
+            <button type="submit">Update!</button>
+          </form>
+
+        <button onclick="deleteHair('<%= hairs[i]._id %>')">Delete</button>
+      </div>
+    <% } %>
+  </main>
+
+</body>
+</html>
