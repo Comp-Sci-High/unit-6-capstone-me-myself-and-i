@@ -20,3 +20,7 @@ async function deleteHair(_id) {
    window.location.href = '/'
 
 }
+
+async function addHair() {
+  
+}
